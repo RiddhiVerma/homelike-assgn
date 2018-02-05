@@ -1,0 +1,578 @@
+
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+
+body {
+ font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 14px;
+  line-height: 1.5;
+  color: #24292e;
+}
+
+.d-block {
+  display: block;
+}
+
+.navbar {
+  z-index: 1;
+  padding-bottom: 12px;
+  color: rgba(255,255,255,0.75);
+  background-color: #24292e;
+  max-height: 50px;
+  color:#ffffff;
+}
+
+.navbar .container {
+  margin: auto 200px;
+  width: auto;
+}
+
+.navbar-header {
+  width: 80%;
+  display: inline-block;
+}
+
+.navbar-brand {
+  padding: 9px;
+}
+
+.navbar-brand .search {
+  min-height: 30px;
+  font-size: inherit;
+  color: #fff;
+  background-color: rgba(255,255,255,0.125);
+  border: 0;
+  box-shadow: none;
+  margin-left: 20px;
+  width: auto;
+  display: inline-block;
+  padding: 3px 11px;
+}
+
+.search a {
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 28px;
+  color: rgba(255,255,255,0.75);
+  width: 1%;
+  padding-right: 8px;
+  padding-left: 8px;
+  white-space: nowrap;
+  vertical-align: middle;
+  border-right: 1px solid #282e34;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  text-decoration: none;
+  display: inline-table;;
+}
+
+
+.search input {
+  font-size: 12px;
+  font-weight: normal;
+  padding-left: 5px;
+  min-height: 26px;
+  padding-top: 0;
+  padding-bottom: 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+
+.topnav {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.topnav li{
+  display: inline-block;
+  list-style: none;
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 10px;
+  color: rgba(255,255,255,0.75);
+}
+
+.git-board {
+  margin: 0 220px;
+  min-height: 800px
+}
+
+.git-board img {
+  width: 230px;
+  height: 230px;
+}
+
+ol, ul {
+  padding-left: 30px;
+  display: inline-block;
+}
+
+
+.status {
+  margin-bottom: 10px;
+  display: inline-block;
+  width: 100%;
+  border-bottom: 1px solid #d1d5da;
+  height: 73px;
+}
+
+.nav-tabs {
+  border: none;
+}
+
+.nav-tabs li {
+  padding: 16px 8px;
+  margin-right: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-tabs li:hover {
+  border-bottom: 1px solid #ccc;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  border: none;
+}
+
+.nav-tabs li.active {
+  border-bottom: 1px solid #e36209;
+}
+
+.nav-tabs > li > a{
+  color:#586069;
+}
+
+.nav-tabs > li > a:hover {
+  background: transparent;
+  border: none;
+  color:#000;
+}
+
+#tab_default_1 {
+  margin-top: 24px;
+}
+
+.headings {
+  margin-bottom: 10px;
+}
+
+.card-block {
+  display: inline-block;
+  border:1px #e1e4e8 solid;
+  padding: 16px;
+  width: 350px;
+  margin-left: 10px;
+  margin-top: 10px;
+
+
+}
+
+.card-block span {
+  margin-top: 20px;
+  display: block;
+}
+
+.pinned-repos-setting-link {
+  font-size: 13px;
+  font-weight: normal;
+  text-decoration: none;
+  color:#586069;
+}
+
+.days li, 
+.day-key { 
+  background: #eee; 
+}
+
+.Contribution {
+  margin-top: 40px;
+}
+
+.activity-chart {
+  width: 720px; 
+  height: 205px;
+  padding-left: 10px;
+  margin-top: 10px;
+  position: relative;
+  border: 1px solid #eee;
+}
+
+/*** day of week heading ***/
+
+.days-of-week {
+  width: 15px;
+  position: absolute;
+  left: -15px;
+  top: 80px;
+}
+
+@-moz-document url-prefix() {
+  .days-of-week { left: 23px; }
+}
+
+.days-of-week { font-size: 0.7em; }
+.days-of-week li:nth-child(2) { margin: 13px 0; }
+
+/*** month headings ***/
+
+.month ol {
+  position: absolute;
+  top: 20px;
+  left: -30px;
+}
+
+.month li {
+  float: right;
+  margin-left: 39px;
+  font-size: 0.75em;
+}
+
+/*** draw days ***/
+
+.days { 
+  font-size: 0.75em;
+  margin-top: 45px;
+  float: right;  /* needed to float onto screen */
+}
+
+/* offset so days of the week line up
+over-specified to win specificity battle */
+.activity-chart .offset:hover { outline: none; }
+.activity-chart .offset { background: #eee; }
+
+/* create vertical weeks */
+.week { 
+  width: 108px;
+  transform: rotate(90deg);
+  margin-right: -131px;
+  margin-top: 100px;
+  display: initial;
+}
+
+.days li, .key li {
+  width: 12px;
+  height: 12px;
+  float: right; /* order days starting at the bottom right */
+}
+
+.days .bold { font-weight: bold; }
+.days li {  margin: 1.5px; }
+
+/*** color-code by activity level ***/
+.activity-chart .activity { background: #d6e685; }
+.activity-chart .activity-two { background: #8cc665; }
+.activity-chart .activity-three { background: #44a340; }
+.activity-chart .activity-four { background: #1e6823; }
+
+.key {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.key ul {
+  display: inline-block; 
+  margin: 0;
+  padding: 0;
+}
+
+.key li {  margin: 0px 2px; }
+
+/*** tooltips ***/
+
+.days li .tooltip { display: block; }
+.days li:hover
+{  
+  /*outline disabled due to firefox cross-broswer issue */
+  /*outline: 1px solid #555;*/
+  position: relative;
+  z-index: 3;
+}
+
+.days li:hover .tooltip {
+  transform: rotate(-90deg);
+  display: block;
+  position: absolute;
+  /* top & left are reversed because the calendar is rotated 90 deg */
+  top: -13px;
+  left: -85px;
+  width: 100px;
+  padding: 10px 5px;
+  text-align: center;
+  background-color: #333; 
+  color: #f1f1f1;
+}
+
+/*** little triangle on the tooltip ***/
+.tooltip:before {
+  content: "";
+  position: absolute;
+  width: 0; 
+  height: 0; 
+  
+  bottom: -10px;
+  right: 50px;
+  
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 11px solid #333;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.vcard-fullname{
+  font-size: 26px;
+  color:#000;
+}
+
+.vcard-username {
+  font-size: 20px;
+  color: #666;
+}
+
+footer {
+  padding-top: 40px;
+  max-width: 1012px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 16px;
+  padding-left: 16px;
+  display: flex;
+}
+
+.info {
+  display: flex;
+  list-style: none;
+  padding-right: 30px;
+}
+
+.info .mr-3 {
+  margin-right: 16px;
+}
+
+.listpage {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e1e4e8;
+  background-color: #fafbfc;
+  display: flex;
+}
+
+.listpage .git-board {
+  min-height: auto;
+  padding:0;
+}
+
+.pagerepohead ul {
+  padding: 0;
+  float: right;
+  margin-right: 10px;
+}
+
+.pagerepohead h1 {
+  display: inline-block;
+  font-size: 18px;
+  padding: 0;
+}
+
+.path-divider {
+  margin: 0 0.25em;
+}
+
+.author a {
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+.actions {
+  float: right;
+  margin: 0 10px 0 0;
+  font-size: 11px;
+  color: #24292e;
+  list-style-type: none;
+}
+
+.actions svg {
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-top;
+}
+
+.actions button {
+  padding: 3px 10px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #24292e;
+  background-color: #eff3f6;
+  background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
+}
+
+.social-count {
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #24292e;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid rgba(27,31,35,0.2);
+  border-left: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.field {
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 20px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #24292e;
+  font-size: 13px;
+}
+
+.field input {
+  width: 450px;
+  background-color: #fafbfc;
+}
+
+.text-gray-dark { 
+  color: #24292e;
+}
+
+.btn {
+  color: #24292e;
+  background-color: #eff3f6;
+  background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
+  padding: 3px 10px;
+  font-size: 12px;
+  line-height: 20px;
+  cursor: pointer;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid rgba(27,31,35,0.2);
+  border-radius: 0.25em;
+}
+
+.edit-btn {
+  margin-left: 15px;
+  float: right;
+}
+
+.repository-meta-content {
+  display: inline-block;
+  width: 100%;
+}
+
+.listpage .git-board img {
+  width: 20px;
+  height: 20px;
+}
+
+.commit-tease {
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 20px;
+  color: #586069;
+  background-color: #f1f8ff;
+  border: 1px solid #c8e1ff;
+  border-radius: 3px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+a.commit-tease-sha {
+  display: inline-block;
+  font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+  font-size: 90%;
+  color: #444d56;
+  margin-left: 3px;
+}
+
+.AvatarStack {
+  min-width: 26px;
+  height: 20px;
+  align-self: flex-start;
+}
+
+.AvatarStack-body {
+  display: flex;
+}
+
+.f6 {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.octicon {
+  fill: currentColor;
+}
+
+.listtable {
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+.listtable td {
+  padding: 6px 3px;
+  line-height: 20px;
+  border-top: 1px solid #eaecef;
+}
+
+td.icon {
+  width: 17px;
+  padding-right: 2px;
+  padding-left: 10px;
+  color: rgba(3,47,98,0.55);
+}
+
+td.icon .octicon-file-directory {
+  color: rgba(3,47,98,0.5);
+}
+
+td.content {
+  max-width: 180px;
+}
+
+td.message {
+  max-width: 442px;
+  padding-left: 10px;
+  overflow: hidden;
+  color: #6a737d;
+}
+
+td.age {
+  width: 125px;
+  padding-right: 10px;
+  color: #6a737d;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.css-truncate.css-truncate-target, .css-truncate .css-truncate-target {
+  display: inline-block;
+  max-width: 125px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: top;
+}
